@@ -7,7 +7,7 @@
 
 using namespace std;
 
-unsigned int isSafeCallCount = 0;
+unsigned int isSafeCallCount = 0; // how many times is isSafe function is called
 
 // Function to print the Sudoku board
 void printBoard(const vector<vector<int> >& board)
@@ -26,25 +26,22 @@ void printBoard(const vector<vector<int> >& board)
 bool isSafe(const vector<vector<int> >& board, int row,
             int col, int num)
 {
-    isSafeCallCount++;  // ADD THIS LINE
-    // Check if the number is already present in the current
-    // row
+    isSafeCallCount++;  
+    // Check if the number is already present in the current row
     for (int x = 0; x < N; x++) {
         if (board[row][x] == num) {
             return false;
         }
     }
 
-    // Check if the number is already present in the current
-    // column
+    // Check if the number is already present in the current column
     for (int x = 0; x < N; x++) {
         if (board[x][col] == num) {
             return false;
         }
     }
 
-    // Check if the number is already present in the 3x3
-    // subgrid
+    // Check if the number is already present in the 3x3 subgrid
     int startRow = row - row % 3;
     int startCol = col - col % 3;
     for (int i = 0; i < 3; i++) {
@@ -97,8 +94,7 @@ bool solveSudokuBacktracking(vector<vector<int> >& board)
             // Place the number
             board[row][col] = num;
 
-            // Recursively attempt to solve the rest of the
-            // board
+            // Recursively attempt to solve the rest of the board
             if (solveSudokuBacktracking(board)) {
                 // If a solution is found, return true
                 return true;
@@ -116,18 +112,8 @@ bool solveSudokuBacktracking(vector<vector<int> >& board)
 int main()
 {
     // Initial Sudoku board with some cells filled for testing
-    vector<vector<int> > board
-       /* = { { 5, 3, 0, 0, 7, 0, 0, 0, 0 },
-            { 6, 0, 0, 1, 9, 5, 0, 0, 0 },
-            { 0, 9, 8, 0, 0, 0, 0, 6, 0 },
-            { 8, 0, 0, 0, 6, 0, 0, 0, 3 },
-            { 4, 0, 0, 8, 0, 3, 0, 0, 1 },
-            { 7, 0, 0, 0, 2, 0, 0, 0, 6 },
-            { 0, 6, 0, 0, 0, 0, 2, 8, 0 },
-            { 0, 0, 0, 4, 1, 9, 0, 0, 5 },
-            { 0, 0, 0, 0, 8, 0, 0, 7, 9 } }; */
+   /* vector<vector<int> > board
 
-        
         = {{0,0,4,3,0,0,2,0,9},
            {0,0,5,0,0,9,0,0,1},
            {0,7,0,0,6,0,0,4,3},
@@ -147,15 +133,11 @@ int main()
     else {
         // No solution found
         cout << "No solution exists" << endl;
-    }
+    } */
 
-    // Example 2: CSV Benchmark
-    cout << "=== Example 2: CSV Benchmark ===" << endl;
-    benchmark("sudoku.csv", 1);
-
-
-
-    // ADD THIS:
+    // CSV Benchmark
+    cout << "=== CSV Benchmark ===" << endl;
+    benchmark("sudoku.csv", 100000);
     cout << "\nTotal isSafe() calls: " << isSafeCallCount << endl;
 
     return 0;
