@@ -1,12 +1,13 @@
-// C++ program to solve a Sudoku puzzle using the
-// Backtracking approach
-
+// C++ program to solve a Sudoku puzzle using the Backtracking approach
+#include "sudoku_benchmark.h"
 #include <iostream>
 #include <vector>
 // Size of the Sudoku board
 #define N 9
 
 using namespace std;
+
+unsigned int isSafeCallCount = 0;
 
 // Function to print the Sudoku board
 void printBoard(const vector<vector<int> >& board)
@@ -25,6 +26,7 @@ void printBoard(const vector<vector<int> >& board)
 bool isSafe(const vector<vector<int> >& board, int row,
             int col, int num)
 {
+    isSafeCallCount++;  // ADD THIS LINE
     // Check if the number is already present in the current
     // row
     for (int x = 0; x < N; x++) {
@@ -113,9 +115,9 @@ bool solveSudokuBacktracking(vector<vector<int> >& board)
 
 int main()
 {
-    // Initial Sudoku board with some cells filled
+    // Initial Sudoku board with some cells filled for testing
     vector<vector<int> > board
-        = { { 5, 3, 0, 0, 7, 0, 0, 0, 0 },
+       /* = { { 5, 3, 0, 0, 7, 0, 0, 0, 0 },
             { 6, 0, 0, 1, 9, 5, 0, 0, 0 },
             { 0, 9, 8, 0, 0, 0, 0, 6, 0 },
             { 8, 0, 0, 0, 6, 0, 0, 0, 3 },
@@ -123,17 +125,38 @@ int main()
             { 7, 0, 0, 0, 2, 0, 0, 0, 6 },
             { 0, 6, 0, 0, 0, 0, 2, 8, 0 },
             { 0, 0, 0, 4, 1, 9, 0, 0, 5 },
-            { 0, 0, 0, 0, 8, 0, 0, 7, 9 } };
+            { 0, 0, 0, 0, 8, 0, 0, 7, 9 } }; */
+
+        
+        = {{0,0,4,3,0,0,2,0,9},
+           {0,0,5,0,0,9,0,0,1},
+           {0,7,0,0,6,0,0,4,3},
+           {0,0,6,0,0,2,0,8,7},
+           {1,9,0,0,0,7,4,0,0},
+           {0,5,0,0,8,3,0,0,0},
+           {6,0,0,0,0,0,1,0,5},
+           {0,0,3,5,0,8,6,9,0},
+           {0,4,2,9,1,0,3,0,0}}; 
 
     // Solve the Sudoku and print the result
     if (solveSudokuBacktracking(board)) {
         // Print the solved board
         printBoard(board);
+        cout << endl;
     }
     else {
         // No solution found
         cout << "No solution exists" << endl;
     }
+
+    // Example 2: CSV Benchmark
+    cout << "=== Example 2: CSV Benchmark ===" << endl;
+    benchmark("sudoku.csv", 1);
+
+
+
+    // ADD THIS:
+    cout << "\nTotal isSafe() calls: " << isSafeCallCount << endl;
 
     return 0;
 }
