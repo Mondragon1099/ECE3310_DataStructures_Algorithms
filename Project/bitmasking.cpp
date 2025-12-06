@@ -154,7 +154,7 @@ int main()
     */
     // CSV Benchmark
     cout << "=== CSV Benchmark ===" << endl;
-    benchmarkBitMask("sudoku.csv", 100);
+    benchmarkBitMask("sudoku.csv", 1000);
  
 
 
