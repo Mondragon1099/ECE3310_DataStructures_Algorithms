@@ -1,5 +1,5 @@
-#ifndef SUDOKU_BITMASK_BENCHMARK_H
-#define SUDOKU_BITMASK_BENCHMARK_H
+#ifndef BITMASK_BENCHMARK_H
+#define BITMASK_BENCHMARK_H
 
 #include <string>
 #include <vector>
