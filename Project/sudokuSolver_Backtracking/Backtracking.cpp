@@ -112,7 +112,7 @@ bool solveSudokuBacktracking(vector<vector<int>>& board)
 int main()
 {
     // Initial Sudoku board with some cells filled for testing
-   /* vector<vector<int>> board
+    vector<vector<int>> board
 
         = {{0,0,4,3,0,0,2,0,9},
            {0,0,5,0,0,9,0,0,1},
@@ -133,12 +133,12 @@ int main()
     else {
         // No solution found
         cout << "No solution exists" << endl;
-    } */
+    } 
 
     // CSV Benchmark
-    cout << "CSV Benchmark:" << endl;
-    benchmark("sudoku.csv", 100000);
-    cout << "\nTotal isSafe() calls: " << isSafeCallCount << endl;
+   // cout << "CSV Benchmark:" << endl;
+    //benchmark("sudoku.csv", 100000);
+    //cout << "\nTotal isSafe() calls: " << isSafeCallCount << endl;
 
     return 0;
 }
