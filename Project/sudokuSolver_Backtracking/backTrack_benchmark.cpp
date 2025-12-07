@@ -1,8 +1,8 @@
 #include "backTrack_benchmark.h"
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <chrono>
+#include <fstream> // library file for file handling
+#include <sstream> // provides string stream classes
+#include <chrono>  // library to measure time
 
 #define N 9
 using namespace std;
