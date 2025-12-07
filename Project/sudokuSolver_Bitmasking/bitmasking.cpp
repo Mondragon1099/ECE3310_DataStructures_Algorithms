@@ -9,7 +9,7 @@
 using namespace std;
 
 // Function to print the Sudoku board
-void printBoard(const vector<vector<int> >& board)
+void printBoard(const vector<vector<int>>& board)
 {
     // Iterate over each row of the board
     for (int r = 0; r < N; r++) {
@@ -24,7 +24,7 @@ void printBoard(const vector<vector<int> >& board)
 }
 
 // Function to solve the Sudoku using Bit Masks approach
-bool solveSudokuBitMasks(vector<vector<int> >& board,
+bool solveSudokuBitMasks(vector<vector<int>>& board,
                          vector<int>& rows,
                          vector<int>& cols,
                          vector<int>& grids)
@@ -41,7 +41,7 @@ bool solveSudokuBitMasks(vector<vector<int> >& board,
                 // Try placing numbers from 1 to 9
                 for (int num = 1; num <= 9; num++) {
                     // Create a bitmask for the number
-                    int bit = 1 << num;
+                    int bit = 1 << num; // Shifts 1 left by num 
 
                     // Check if the number can be placed in
                     // the current cell
@@ -98,7 +98,7 @@ bool solveSudokuBitMasks(vector<vector<int> >& board,
 int main()
 {
     // Initial Sudoku board with some cells filled
-   /* vector<vector<int> > board
+   /* vector<vector<int>> board
         = { { 5, 3, 0, 0, 7, 0, 0, 0, 0 },
             { 6, 0, 0, 1, 9, 5, 0, 0, 0 },
             { 0, 9, 8, 0, 0, 0, 0, 6, 0 },

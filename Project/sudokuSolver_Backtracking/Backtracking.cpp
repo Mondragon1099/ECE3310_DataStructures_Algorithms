@@ -10,7 +10,7 @@ using namespace std;
 unsigned int isSafeCallCount = 0; // how many times is isSafe function is called
 
 // Function to print the Sudoku board
-void printBoard(const vector<vector<int> >& board)
+void printBoard(const vector<vector<int>>& board)
 {
     for (int r = 0; r < N; r++) {
         for (int d = 0; d < N; d++) {
@@ -23,7 +23,7 @@ void printBoard(const vector<vector<int> >& board)
 }
 
 // Function to check if placing a number in the cell is safe
-bool isSafe(const vector<vector<int> >& board, int row,
+bool isSafe(const vector<vector<int>>& board, int row,
             int col, int num)
 {
     isSafeCallCount++;  
@@ -56,7 +56,7 @@ bool isSafe(const vector<vector<int> >& board, int row,
 }
 
 // Function to solve the Sudoku using Backtracking approach
-bool solveSudokuBacktracking(vector<vector<int> >& board)
+bool solveSudokuBacktracking(vector<vector<int>>& board)
 {
     // To store the row index of the empty cell
     int row = -1;
@@ -112,7 +112,7 @@ bool solveSudokuBacktracking(vector<vector<int> >& board)
 int main()
 {
     // Initial Sudoku board with some cells filled for testing
-   /* vector<vector<int> > board
+   /* vector<vector<int>> board
 
         = {{0,0,4,3,0,0,2,0,9},
            {0,0,5,0,0,9,0,0,1},
