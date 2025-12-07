@@ -1,6 +1,3 @@
-// ============================================
-// FILE: sudoku_bitmask_benchmark.h
-// ============================================
 #ifndef SUDOKU_BITMASK_BENCHMARK_H
 #define SUDOKU_BITMASK_BENCHMARK_H
 

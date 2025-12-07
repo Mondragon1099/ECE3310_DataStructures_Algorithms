@@ -1,6 +1,3 @@
-// ============================================
-// FILE: sudoku_benchmark.h
-// ============================================
 #ifndef SUDOKU_BENCHMARK_H
 #define SUDOKU_BENCHMARK_H
 

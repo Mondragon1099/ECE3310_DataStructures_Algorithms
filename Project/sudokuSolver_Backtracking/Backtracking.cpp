@@ -1,5 +1,5 @@
 // C++ program to solve a Sudoku puzzle using the Backtracking approach
-#include "sudoku_benchmark.h"
+#include "backtrack_benchmark.h"
 #include <iostream>
 #include <vector>
 // Size of the Sudoku board
@@ -136,7 +136,7 @@ int main()
     } */
 
     // CSV Benchmark
-    cout << "=== CSV Benchmark ===" << endl;
+    cout << "CSV Benchmark:" << endl;
     benchmark("sudoku.csv", 100000);
     cout << "\nTotal isSafe() calls: " << isSafeCallCount << endl;
 

@@ -1,7 +1,4 @@
-// ============================================
-// FILE: sudoku_bitmask_benchmark.cpp
-// ============================================
-#include "sudoku_bitmask_benchmark.h"
+#include "bitmask_benchmark.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

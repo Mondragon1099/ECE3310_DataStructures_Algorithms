@@ -1,6 +1,6 @@
 // C++ program to solve a Sudoku puzzle using the
 // Bit masking approach
-#include "sudoku_bitmask_benchmark.h"
+#include "bitmask_benchmark.h"
 #include <iostream>
 #include <vector>
 // Size of the Sudoku board
@@ -153,7 +153,7 @@ int main()
     }
     */
     // CSV Benchmark
-    cout << "=== CSV Benchmark ===" << endl;
+    cout << "CSV Benchmark:" << endl;
     benchmarkBitMask("sudoku.csv", 1000);
  
 
